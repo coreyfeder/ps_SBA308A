@@ -1,63 +1,48 @@
-const express = require("express");
-const fs = require("fs");
-const logging = require("logging");
+// const fs = require("fs");
 
-const app = express();
-const port = 3000; // try 5000 if troubles
-const host = "localhost";
-const protocol = "http";
-const url = `${protocol}://${host}:${port}/`
+const api_protocol = "https"
+const api_host = "api.pexels.com"
+const api_endpoint = "v1/search"
+const api_port = ""
 
-// CONNECTION TO DB
+const api_url = `${api_protocol}://${api_host}${(api_port) ? ":"+apiport : ""}/${api_endpoint}`
 
-// MIDDLEWARE
+const url = (page=pagenum || 1, per_page=images_per_page || 3) => {
+    
+}
 
-// ROUTES
+let page_num = 1
+let images_per_page = 3
 
-app.get("/", (req, res) => {
-    res.send("Hello Express!");
-});
+// -H "Authorization: $YOUR_API_KEY" 
+// "https://api.pexels.com/v1/collections/clyoggb?page=1&per-page=3" 
+// "https://api.pexels.com/v1/collections/clyoggb?page=1&per_page=3"
 
-app.get("/express", (req, res) => {
-    res.send("Creating routes with Express is simple!");
-});
 
-app.get("/user", (req, res) => {
-    res.send("Received a GET request for user!");
-});
+"https://api.pexels.com/v1/search?query=ferret&page=1&per_page=3"
 
-app.get("/user/:userid", (req, res) => {
-    res.send(`Ah, want to know about user ${req.params.userid}, eh?`);
-});
+let apikey = 'OmSbPGDLr7S0nM4ym7slxHFdTKRWamIvxVVZiQoZnDeier1JOc9n4M9y'
 
-app.get("/user/:userid/profile", (req, res) => {
-    res.send(`${req.params.userid} is great. We laugh. We cry. Better than <i>Cats</i>.`);
-});
+<a href="https://www.pexels.com">Photos provided by Pexels</a>
 
-app.get("/user/:userid/profile/:data", (req, res) => {
-    res.send(`Oh no, that'd be an invasion of provacy. ${req.params.userid} probably doesn't want ${req.params.data} out in the open.`);
-});
+<!-- or show our white logo -->
 
-app.get("/user/:userid/profile/:data", (req, res) => {
-    res.send(
-      `Navigated to the user profile page for: ${req.params.userid}, with the data: ${req.params.data}.`
-    );
-});
+<a href="https://www.pexels.com">
+  <img src="https://images.pexels.com/lib/api/pexels-white.png" />
+</a>
 
-app.post("/user", (req, res) => {
-    res.send("Received a POST request for user!");
-});
+<!-- or show our black logo -->
 
-app.patch("/user", (req, res) => {
-    res.send("Received a PATCH request for user! If only it were that easy, eh?");
-});
+<a href="https://www.pexels.com">
+  <img src="https://images.pexels.com/lib/api/pexels.png" />
+</a>
 
-app.delete("/user", (req, res) => {
-    res.send("HAHA! It actually IS that easy! But don't do that. People, don't do murders.");
-});
+// 
+Weezils provided by <a href="https://www.pexels.com">Pexels</a>.
 
-// LISTENERS
 
-app.listen(port, () => {
-    console.log(`Server listening at:\n  ${url}`);
-});
+GET, POST, PUT, PATCH
+
+
+
+
